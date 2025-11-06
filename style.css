@@ -1182,33 +1182,7 @@ p { font-size: 5rem;
       justify-content: center;
     }
   
-    /* ====== Profile Photo Wrapper ====== */
-    .hero-photo-block {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1.2rem;
-    }
-  
-    .profile-photo-wrapper {
-      width: 220px;
-      height: 350px;
-      padding: 5px;
-      border-radius: 50%;
-      box-shadow: 0 6px 25px rgba(56, 189, 248, 0.25);
-    }
-  
-    /* ====== Photo itself ====== */
-    .hero-photo-square,
-    .hero-photo-circle {
-      width: 210px;
-      height: 340px;
-      object-fit: cover;
-      border-radius: 50%; /* ensures circular shape */
-      border: 2px solid var(--accent);
-      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.5);
-    }
-  
+   
     /* ====== Buttons ====== */
     .hero-actions {
       flex-direction: column;
@@ -1284,26 +1258,42 @@ p { font-size: 5rem;
       opacity: 1;
     }
   }
+  /* ===== Rectangular Profile Photo Fix for Mobile ===== */
+.hero-photo-block {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+  }
   
-  /* Extra small screens (like iPhones ≤480px) */
-  @media (max-width: 480px) {
-    .hero-photo-square,
-    .hero-photo-circle {
-      width: 170px;
-      height: 200px;
-    }
+  /* Default desktop view (large screens) */
+  .hero-photo-rectangle {
+    width: 300px;          /* adjust as needed */
+    height: auto;          /* keeps natural proportion */
+    border-radius: 16px;   /* slightly rounded corners */
+    object-fit: cover;
+    border: 2px solid var(--accent);
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
+  }
   
-    .profile-photo-wrapper {
-      width: 180px;
-      height: 220px;
-    }
-  
-    .hero-title {
-      font-size: 1.6rem;
-    }
-  
-    .section-title {
-      font-size: 1.5rem;
+  /* For medium and small screens */
+  @media (max-width: 768px) {
+    .hero-photo-rectangle {
+      width: 70%;           /* scales to 70% of screen width */
+      max-width: 320px;     /* caps it for tablets */
+      height: auto;
+      border-radius: 12px;
     }
   }
+  
+  /* For very small phones */
+  @media (max-width: 480px) {
+    .hero-photo-rectangle {
+      width: 85%;
+      max-width: 260px;
+      height: auto;
+      border-radius: 10px;
+    }
+  }
+  
   
