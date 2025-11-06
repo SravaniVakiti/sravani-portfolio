@@ -1239,9 +1239,9 @@ p { font-size: 5rem;
   }
   
   /* For very small phones */
-  @media (max-width: 500px) {
+  @media (max-width: 400px) {
     .hero-photo-rectangle {
-      width: 85%;
+      width: 75%;
       max-width: 260px;
       height: auto;
       border-radius: 10px;
