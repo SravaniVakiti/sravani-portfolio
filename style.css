@@ -1150,5 +1150,160 @@ p { font-size: 5rem;
     .contact-buttons {
       justify-content: center;
     }
+}
+
+  /* =============================
+   MOBILE RESPONSIVENESS FIXES
+   ============================= */
+
+@media (max-width: 768px) {
+    /* ====== General Layout ====== */
+    body {
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  
+    .section {
+      padding: 3rem 1rem;
+    }
+  
+    /* ====== Hero Section ====== */
+    .hero-flex {
+      flex-direction: column-reverse;
+      text-align: center;
+      gap: 2rem;
+    }
+  
+    .hero-text-block {
+      max-width: 100%;
+    }
+  
+    .hero-bullets {
+      justify-content: center;
+    }
+  
+    /* ====== Profile Photo Wrapper ====== */
+    .hero-photo-block {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+  
+    .profile-photo-wrapper {
+      width: 220px;
+      height: 220px;
+      padding: 5px;
+      border-radius: 50%;
+      box-shadow: 0 6px 25px rgba(56, 189, 248, 0.25);
+    }
+  
+    /* ====== Photo itself ====== */
+    .hero-photo-square,
+    .hero-photo-circle {
+      width: 210px;
+      height: 210px;
+      object-fit: cover;
+      border-radius: 50%; /* ensures circular shape */
+      border: 2px solid var(--accent);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.5);
+    }
+  
+    /* ====== Buttons ====== */
+    .hero-actions {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  
+    .hero-actions .btn {
+      width: 100%;
+      justify-content: center;
+    }
+  
+    /* ====== Skills & Projects ====== */
+    .skills-grid,
+    .projects-grid,
+    .contact-grid {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+  
+    /* ====== Experience Timeline ====== */
+    .timeline::before {
+      left: 8px;
+    }
+  
+    .timeline-item {
+      flex-direction: column;
+      gap: 0.8rem;
+      padding-left: 1.5rem;
+    }
+  
+    .timeline-marker {
+      margin: 0 auto;
+    }
+  
+    .timeline-content {
+      text-align: left;
+      padding: 1rem;
+    }
+  
+    /* ====== Contact Section ====== */
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-form,
+    .contact-info-block {
+      width: 100%;
+      margin: 0 auto;
+    }
+  
+    /* ====== Navbar ====== */
+    .nav-links {
+      position: fixed;
+      top: var(--nav-height);
+      right: 1rem;
+      left: 1rem;
+      background: rgba(15, 23, 42, 0.98);
+      border: 1px solid rgba(148, 163, 184, 0.3);
+      border-radius: 0.75rem;
+      display: none;
+      flex-direction: column;
+      gap: 0.6rem;
+      padding: 1rem;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+      transform: translateY(-20px);
+      opacity: 0;
+      transition: all 0.3s ease;
+    }
+  
+    .nav-links.open {
+      display: flex;
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Extra small screens (like iPhones ≤480px) */
+  @media (max-width: 480px) {
+    .hero-photo-square,
+    .hero-photo-circle {
+      width: 170px;
+      height: 170px;
+    }
+  
+    .profile-photo-wrapper {
+      width: 180px;
+      height: 180px;
+    }
+  
+    .hero-title {
+      font-size: 1.6rem;
+    }
+  
+    .section-title {
+      font-size: 1.5rem;
+    }
   }
   
