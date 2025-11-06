@@ -829,7 +829,14 @@ html {
     align-items: center;
   }
   
-
+  .hero-photo {
+    width: 260px;
+    height: 260px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid rgba(56,189,248,0.5);
+    box-shadow: 0 18px 40px rgba(15,23,42,0.6);
+  }
   
   /* ===== Highlight Card Section ===== */
   .highlight-card-section {
@@ -890,7 +897,16 @@ html {
     background-color: var(--accent);
     color: #fff;
   }
- 
+  
+  /* Square Profile Photo */
+  .hero-photo-square {
+    width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 8px 25px rgba(56, 189, 248, 0.25);
+    border: 2px solid var(--accent-soft);
+  }
   
   /* Contact Section Enhancements */
   .contact-section {
@@ -926,13 +942,45 @@ html {
     text-decoration: underline;
   }
   
- 
+  @media (max-width: 768px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+    .hero-photo-square {
+      width: 180px;
+      height: 180px;
+      margin: 0 auto;
+    }
+  }
+
   /* =============================
    HERO PHOTO STYLING
    ============================= */
 
-
-
+/* Container around the profile image */
+.profile-photo-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /*background: linear-gradient(135deg, rgba(56, 189, 248, 0.2), rgba(14, 165, 233, 0.15));*/
+    border-radius: 50%;
+    padding: 8px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+  }
+  
+  .profile-photo-wrapper:hover {
+    transform: scale(1.0);
+  }
+  
+  /* Circular image itself */
+  .hero-photo-circle {
+    width: 300px;           /* Adjust this to your preferred on-screen size */
+    height: 500px;          /* Same as width to maintain perfect circle */
+    object-fit: cover;      /* Ensures the face stays centered, crops edges if needed */
+    border-radius: 50%;     /* Makes it circular */
+    border: 3px solid var(--accent);
+  }
   
   /* For larger screens, slightly increase the image size */
   @media (min-width: 500px) {
@@ -1102,150 +1150,5 @@ p { font-size: 5rem;
     .contact-buttons {
       justify-content: center;
     }
-}
-
-  /* =============================
-   MOBILE RESPONSIVENESS FIXES
-   ============================= */
-
-@media (max-width: 768px) {
-    /* ====== General Layout ====== */
-    body {
-      font-size: 0.95rem;
-      line-height: 1.6;
-    }
-  
-    .section {
-      padding: 3rem 1rem;
-    }
-  
-    /* ====== Hero Section ====== */
-    .hero-flex {
-      flex-direction: column-reverse;
-      text-align: center;
-      gap: 2rem;
-    }
-  
-    .hero-text-block {
-      max-width: 100%;
-    }
-  
-    .hero-bullets {
-      justify-content: center;
-    }
-  
-   
-    /* ====== Buttons ====== */
-    .hero-actions {
-      flex-direction: column;
-      align-items: stretch;
-    }
-  
-    .hero-actions .btn {
-      width: 100%;
-      justify-content: center;
-    }
-  
-    /* ====== Skills & Projects ====== */
-    .skills-grid,
-    .projects-grid,
-    .contact-grid {
-      grid-template-columns: 1fr;
-      gap: 1.5rem;
-    }
-  
-    /* ====== Experience Timeline ====== */
-    .timeline::before {
-      left: 8px;
-    }
-  
-    .timeline-item {
-      flex-direction: column;
-      gap: 0.8rem;
-      padding-left: 1.5rem;
-    }
-  
-    .timeline-marker {
-      margin: 0 auto;
-    }
-  
-    .timeline-content {
-      text-align: left;
-      padding: 1rem;
-    }
-  
-    /* ====== Contact Section ====== */
-    .contact-grid {
-      grid-template-columns: 1fr;
-    }
-  
-    .contact-form,
-    .contact-info-block {
-      width: 100%;
-      margin: 0 auto;
-    }
-  
-    /* ====== Navbar ====== */
-    .nav-links {
-      position: fixed;
-      top: var(--nav-height);
-      right: 1rem;
-      left: 1rem;
-      background: rgba(15, 23, 42, 0.98);
-      border: 1px solid rgba(148, 163, 184, 0.3);
-      border-radius: 0.75rem;
-      display: none;
-      flex-direction: column;
-      gap: 0.6rem;
-      padding: 1rem;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      transform: translateY(-20px);
-      opacity: 0;
-      transition: all 0.3s ease;
-    }
-  
-    .nav-links.open {
-      display: flex;
-      transform: translateY(0);
-      opacity: 1;
-    }
   }
-  /* ===== Rectangular Profile Photo Fix for Mobile ===== */
-.hero-photo-block {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-  }
-  
-  /* Default desktop view (large screens) */
-  .hero-photo-rectangle {
-    width: 300px;          /* adjust as needed */
-    height: auto;          /* keeps natural proportion */
-    border-radius: 16px;   /* slightly rounded corners */
-    object-fit: cover;
-    border: 2px solid var(--accent);
-    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.25);
-  }
-  
-  /* For medium and small screens */
-  @media (max-width: 768px) {
-    .hero-photo-rectangle {
-      width: 70%;           /* scales to 70% of screen width */
-      max-width: 320px;     /* caps it for tablets */
-      height: auto;
-      border-radius: 12px;
-    }
-  }
-  
-  /* For very small phones */
-  @media (max-width: 400px) {
-    .hero-photo-rectangle {
-      width: 75%;
-      max-width: 260px;
-      height: auto;
-      border-radius: 10px;
-    }
-  }
-  
   
