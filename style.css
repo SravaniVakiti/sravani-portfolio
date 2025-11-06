@@ -1192,7 +1192,7 @@ p { font-size: 5rem;
   
     .profile-photo-wrapper {
       width: 220px;
-      height: 220px;
+      height: 350px;
       padding: 5px;
       border-radius: 50%;
       box-shadow: 0 6px 25px rgba(56, 189, 248, 0.25);
@@ -1202,7 +1202,7 @@ p { font-size: 5rem;
     .hero-photo-square,
     .hero-photo-circle {
       width: 210px;
-      height: 210px;
+      height: 340px;
       object-fit: cover;
       border-radius: 50%; /* ensures circular shape */
       border: 2px solid var(--accent);
@@ -1290,12 +1290,12 @@ p { font-size: 5rem;
     .hero-photo-square,
     .hero-photo-circle {
       width: 170px;
-      height: 170px;
+      height: 200px;
     }
   
     .profile-photo-wrapper {
       width: 180px;
-      height: 180px;
+      height: 220px;
     }
   
     .hero-title {
